@@ -8,7 +8,7 @@ NecroRumble은 크래프톤 정글 게임랩에서 5인 1팀으로 3개월간 �
 
 ### 1. 네크로맨서 시스템
 - 시체 부활 시스템: 적을 처치한 후 시체를 부활시켜 언데드 군단을 구성
-- 스킬 강화: 시체를 부활시킬 때마다 얻는 경험치로 능력 업그레이드
+- 스킬 강화: 상자 발견 혹은 시체를 부활시킬 때마다 얻는 경험치로 능력 업그레이드
   ![4](https://github.com/user-attachments/assets/016b17fc-ac14-4553-a6bb-e0120e480959)
 
 ### 2. 유닛 시스템
@@ -61,65 +61,65 @@ NecroRumble은 크래프톤 정글 게임랩에서 5인 1팀으로 3개월간 �
       }
       ```
 
-- 엘리트 유닛 시스템:
-  - 기마병(HorseMan):
-    ```csharp
-    public class HorseManUnit : Unit
-    {
-        private float _chargePower = 20f;
-        private bool _isCharging = false;
-        // 돌진 및 충격파 시스템
-    }
-    ```
-  - 성녀/서큐버스(PriestSuccubus):
-    ```csharp
-    public class PriestSuccubusUnit : Unit
-    {
-        private float _healRadius = 5f;
-        private float _charmDuration = 3f;
-        // 광역 힐링 및 매혹 시스템
-    }
-    ```
-  - 쌍검 암살자(DualBladeAssassin):
-    ![2](https://github.com/user-attachments/assets/f1d7443c-324a-46d6-84b1-3c9b1641e53a)
-    ```csharp
-    public class DualBladeAssassinUnit : Unit
-    {
-        private Vector3 _bladeDanceCenter;
-        private float _bladeDanceRadius = 3f;
-        // 순간이동 및 칼춤 공격 시스템
-    }
-    ```
-  - 마법사(FlameMagician):
-    ```csharp
-    public class FlameMagicianUnit : Unit
-    {
-        private GameObject _fireMagicCircle;
-        private float _specialAttackCoolTime = 5f;
-        private float _specialAttackCastingSpeed = 1f;
-        // 마법진 및 화염구 시스템
-    }
-    ```
-  - 골렘(Golem):
-    ![3](https://github.com/user-attachments/assets/0674234b-6fce-4028-8324-b22504e067f3)
-    ```csharp
-    public class GolemUnit : Unit
-    {
-        private float _jumpPower = 15f;
-        private float _slamRadius = 4f;
-        // 점프 및 충격파 시스템
-    }
-    ```
-  - 날개 전사(FlightSword):
-    ```csharp
-    public class FlightSwordUnit : Unit
-    {
-        private List<GameObject> _summonedSwords = new List<GameObject>();
-        private float _swordSummonRadius = 6f;
-        // 마법 검 소환 시스템
-    }
-    ```
-
+  - 엘리트 유닛 시스템:
+    - 기마병(HorseMan):
+      ```csharp
+      public class HorseManUnit : Unit
+      {
+          private float _chargePower = 20f;
+          private bool _isCharging = false;
+          // 돌진 및 충격파 시스템
+      }
+      ```
+    - 성녀/서큐버스(PriestSuccubus):
+      ```csharp
+      public class PriestSuccubusUnit : Unit
+      {
+          private float _healRadius = 5f;
+          private float _charmDuration = 3f;
+          // 광역 힐링 및 매혹 시스템
+      }
+      ```
+    - 쌍검 암살자(DualBladeAssassin):
+      ![2](https://github.com/user-attachments/assets/f1d7443c-324a-46d6-84b1-3c9b1641e53a)
+      ```csharp
+      public class DualBladeAssassinUnit : Unit
+      {
+          private Vector3 _bladeDanceCenter;
+          private float _bladeDanceRadius = 3f;
+          // 순간이동 및 칼춤 공격 시스템
+      }
+      ```
+    - 마법사(FlameMagician):
+      ```csharp
+      public class FlameMagicianUnit : Unit
+      {
+          private GameObject _fireMagicCircle;
+          private float _specialAttackCoolTime = 5f;
+          private float _specialAttackCastingSpeed = 1f;
+          // 마법진 및 화염구 시스템
+      }
+      ```
+    - 골렘(Golem):
+      ![3](https://github.com/user-attachments/assets/0674234b-6fce-4028-8324-b22504e067f3)
+      ```csharp
+      public class GolemUnit : Unit
+      {
+          private float _jumpPower = 15f;
+          private float _slamRadius = 4f;
+          // 점프 및 충격파 시스템
+      }
+      ```
+    - 날개 전사(FlightSword):
+      ```csharp
+      public class FlightSwordUnit : Unit
+      {
+          private List<GameObject> _summonedSwords = new List<GameObject>();
+          private float _swordSummonRadius = 6f;
+          // 마법 검 소환 시스템
+      }
+      ```
+      
 - 유닛 AI 시스템:
   - Behavior Tree 기반 AI 구현
   - 유닛 타입별 특화된 행동 패턴
